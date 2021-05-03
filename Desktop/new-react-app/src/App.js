@@ -29,12 +29,6 @@ export default class App extends Component {
     ],
     dummyBooks: null,
   };
-  handleState = (id) => {
-    let newBooks = this.state.books.filter((book) => {
-      return book.id !== id;
-    });
-    this.setState({ books: newBooks });
-  };
 
   handleDummy = (name) => {
     if (!this.state.dummyBooks) {
@@ -42,13 +36,28 @@ export default class App extends Component {
         return book.name === name;
       });
       this.setState({ dummyBooks: newDummy });
+    } else {
+      if (
+        !this.state.dummyBooks.some((book) => {
+          return book.name === name;
+        })
+      ) {
+        const newDummy = this.state.books.filter((book) => {
+          return book.name === name;
+        });
+        const NewDummy = [...this.state.dummyBooks];
+        NewDummy.push(newDummy[0]);
+        this.setState({ dummyBooks: NewDummy });
+      } else {
+        alert("Item already selected!");
+      }
     }
-    // const newDummy = this.state.books.filter((book) => {
-    //   return book.name === name;
-    // });
-    // const NewDummy = [...this.state.dummyBooks];
-    // NewDummy.push(newDummy[0]);
-    // this.setState({ dummyBooks: NewDummy });
+  };
+  handleState = (id) => {
+    let newBooks = this.state.dummyBooks.filter((book) => {
+      return book.id !== id;
+    });
+    this.setState({ dummyBooks: newBooks });
   };
   render() {
     return (
