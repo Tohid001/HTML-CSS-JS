@@ -40,33 +40,3 @@ export default function ItemList() {
     </Context.Consumer>
   );
 }
-// {dummyBooks.map((book) => {
-//     return <ItemList />;
-//   })}
-
-// return (
-//     <li className="list-group-item d-flex flex-column flex-lg-row">
-//       <blockquote class="blockquote">
-//         <p class="mb-0">{dummyBooks.name}</p>
-//         <footer class="blockquote-footer">
-//           <cite title="Source Title">Written by {dummyBooks.author}</cite>
-//         </footer>
-//       </blockquote>
-
-//       <span className="ml-lg-auto text-center text-lg-left">
-//         {book.price}
-//       </span>
-//       <div className="d-flex ml-lg-4">
-//         <span
-//           className="mr-lg-3"
-//           style={{ cursor: "pointer" }}
-//           onClick={() => handleState(dummyBooks.id)}
-//         >
-//           <i class="fas fa-trash"></i>
-//         </span>
-//         <span className="ml-auto ml-lg-auto">
-//           <small>{`(${dummyBooks.quantity} items are available)`}</small>
-//         </span>
-//       </div>
-//     </li>
-//   );

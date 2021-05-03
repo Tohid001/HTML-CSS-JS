@@ -1,6 +1,5 @@
 import React from "react";
 import Context from "../Context/context";
-// import ItemList from "./itemList";
 
 export default class AddItems extends React.Component {
   state = { selectValue: "Chose books..." };
@@ -44,11 +43,3 @@ export default class AddItems extends React.Component {
 }
 
 AddItems.contextType = Context;
-
-{
-  /* <ItemList /> */
-}
-
-// {dummyBooks.map((book) => {
-//   return <ItemList/>;
-// })}
